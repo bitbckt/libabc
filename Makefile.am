@@ -59,8 +59,8 @@ nodist_pkgconfig_DATA = src/libabc.pc
 EXTRA_DIST += src/libabc.pc.in
 CLEANFILES += src/libabc.pc
 
-TESTS = src/test-libabc
+TESTS = test/test-libabc
 
-check_PROGRAMS = src/test-libabc
-src_test_libabc_SOURCES = src/test-libabc.c
-src_test_libabc_LDADD = src/libabc.la
+check_PROGRAMS = test/test-libabc
+test_test_libabc_SOURCES = test/test-libabc.c
+test_test_libabc_LDADD = src/libabc.la
