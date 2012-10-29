@@ -1,0 +1,79 @@
+                              libabc 4
+                   (Library for something with abc)
+
+                Written by Someone <someone@example.com>
+
+  Copyright (C) 2012 Someone <someone@example.com>. This software is
+  distributed under a BSD-style license.  Please see the included LICENSE
+  file for more information.
+
+DESCRIPTION
+
+  This package serves as a template for building libraries in C, intended
+  for distribution on POSIX operating systems. See the THANKS section
+  below for major sources of inspiration.
+
+REQUIREMENTS
+
+  Everything requires a C compiler to build and expects an ISO C89 or
+  later C compiler and libraries.
+
+  To bootstrap from a Git checkout, or if you change the Automake files
+  and need to regenerate Makefile.in, you will need Automake 1.11 or
+  later.  For bootstrap or if you change configure.ac or any of the m4
+  files it includes and need to regenerate configure or config.h.in, you
+  will need Autoconf 2.60 or later.
+
+BUILDING
+
+  You can build libabc with:
+
+      ./configure
+      make
+
+  Pass --enable-logging to configure to enable logging functionality.
+
+  Pass --enable-debug to configure to enable debug messages.
+
+TESTING
+
+  libabc comes with a test suite, which you can run after building with:
+
+      make check
+
+USING THIS CODE
+
+  While there is an install target, it's present only because Automake
+  provides it automatically.  Its use is not recommended.  Instead, the
+  code in this package is intended to be copied into your package and
+  serves only as a template.
+
+HOMEPAGE AND SOURCE REPOSITORY
+
+  The libabc web page is at:
+
+      http://github.com/bitbckt/libabc
+
+  libabc is maintained using Git.  You can access the current source
+  by cloning the repository at:
+
+      git://github.com/bitbckt/libabc.git
+
+  or view the repository via the web at:
+
+      http://github.com/bitbckt/libabc.
+
+  Please send any bug reports, patches, or questions to someone@exmaple.com.
+
+THANKS
+
+  Many programmers keep similar template projects, but there are two which
+  specifically inspired this one:
+
+  libabc (http://0pointer.de/blog/projects/libabc.html)
+
+    The original code for this project was shamelessly ripped from here.
+
+  Russ Albery's Coding Style (http://www.eyrie.org/~eagle/notes/style/)
+
+    Russ' documentation style and Autotools suggestions are present here.

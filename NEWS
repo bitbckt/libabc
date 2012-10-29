@@ -1,0 +1,21 @@
+libabc 4.1 (unreleased)
+
+       Build system updates.
+
+libabc 4 (2004-07-10)
+
+        Use separate include directory: /usr/include/libabc/libabc.h.
+
+        Create .xz tarball.
+
+libabc 3 (2003-06-14)
+
+       Add functionality. Export symbols for 'thing'.
+
+libabc 2 (2002-10-03)
+
+       Add support for 'thing'.
+
+libabc 1 (2002-08-20)
+
+       Initial release.

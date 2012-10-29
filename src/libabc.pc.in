@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libabc
+Description: Library for something with abc
+URL: http://www.example.com/dist/libabc-@VERSION@.tar.xz
+Version: @VERSION@
+Libs: -L${libdir} -labc
+Libs.private:
+Cflags: -I${includedir}
