@@ -26,24 +26,24 @@
 static inline void __attribute__((always_inline, format(printf, 2, 3)))
 abc_log_null(struct abc_ctx *ctx, const char *format, ...) {}
 
-#define abc_log_cond(ctx, prio, arg...) \
+#define abc_log_cond(ctx, prio, ...) \
   do { \
     if (abc_get_log_priority(ctx) >= prio) \
-      abc_log(ctx, prio, __FILE__, __LINE__, __FUNCTION__, ## arg); \
+      abc_log(ctx, prio, __FILE__, __LINE__, __FUNCTION__, __VA_ARGS__); \
   } while (0)
 
 #ifdef ENABLE_LOGGING
 #  ifdef ENABLE_DEBUG
-#    define dbg(ctx, arg...) abc_log_cond(ctx, LOG_DEBUG, ## arg)
+#    define dbg(ctx, ...) abc_log_cond(ctx, LOG_DEBUG, __VA_ARGS__)
 #  else
-#    define dbg(ctx, arg...) abc_log_null(ctx, ## arg)
+#    define dbg(ctx, ...) abc_log_null(ctx, __VA_ARGS__)
 #  endif
-#  define info(ctx, arg...) abc_log_cond(ctx, LOG_INFO, ## arg)
-#  define err(ctx, arg...) abc_log_cond(ctx, LOG_ERR, ## arg)
+#  define info(ctx, ...) abc_log_cond(ctx, LOG_INFO, __VA_ARGS__)
+#  define err(ctx, ...) abc_log_cond(ctx, LOG_ERR, __VA_ARGS__)
 #else
-#  define dbg(ctx, arg...) abc_log_null(ctx, ## arg)
-#  define info(ctx, arg...) abc_log_null(ctx, ## arg)
-#  define err(ctx, arg...) abc_log_null(ctx, ## arg)
+#  define dbg(ctx, ...) abc_log_null(ctx, __VA_ARGS__)
+#  define info(ctx, ...) abc_log_null(ctx, __VA_ARGS__)
+#  define err(ctx, ...) abc_log_null(ctx, __VA_ARGS__)
 #endif
 
 #define ABC_EXPORT __attribute__ ((visibility("default")))

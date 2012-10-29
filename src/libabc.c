@@ -166,7 +166,7 @@ abc_new(struct abc_ctx **ctx)
           abc_set_log_priority(c, log_priority(env));
      }
 
-     info(c, "ctx %p created\n", c);
+     info(c, "ctx %p created\n", (void *)c);
      dbg(c, "log_priority=%d\n", c->log_priority);
      *ctx = c;
      return 0;
@@ -211,7 +211,7 @@ abc_unref(struct abc_ctx *ctx)
           return ctx;
      }
 
-     info(ctx, "context %p released\n", ctx);
+     info(ctx, "context %p released\n", (void *)ctx);
      free(ctx);
      return NULL;
 }
@@ -234,7 +234,7 @@ abc_set_log_fn(struct abc_ctx *ctx,
                               const char *format, va_list args))
 {
      ctx->log_fn = log_fn;
-     info(ctx, "custom logging function %p registered\n", log_fn);
+     info(ctx, "custom logging function %p registered\n", (void *)&log_fn);
 }
 
 /**
@@ -296,7 +296,7 @@ abc_thing_unref(struct abc_thing *thing)
           return thing;
      }
 
-     dbg(thing->ctx, "context %p released\n", thing);
+     dbg(thing->ctx, "context %p released\n", (void *)thing);
      free(thing);
      return NULL;
 }
