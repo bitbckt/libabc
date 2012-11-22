@@ -67,6 +67,11 @@ log_stderr(struct abc_ctx *ctx,
            int priority, const char *file, int line, const char *fn,
            const char *format, va_list args)
 {
+     UNUSED(ctx);
+     UNUSED(priority);
+     UNUSED(file);
+     UNUSED(line);
+
      fprintf(stderr, "libabc: %s: ", fn);
      vfprintf(stderr, format, args);
 }
@@ -310,6 +315,8 @@ abc_thing_get_ctx(struct abc_thing *thing)
 ABC_EXPORT int
 abc_thing_new_from_string(struct abc_ctx *ctx, const char *string, struct abc_thing **thing)
 {
+     UNUSED(string);
+
      struct abc_thing *t;
 
      t = calloc(1, sizeof(struct abc_thing));
@@ -326,5 +333,7 @@ abc_thing_new_from_string(struct abc_ctx *ctx, const char *string, struct abc_th
 ABC_EXPORT struct abc_list_entry *
 abc_thing_get_some_list_entry(struct abc_thing *thing)
 {
+     UNUSED(thing);
+
      return NULL;
 }

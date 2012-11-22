@@ -23,8 +23,14 @@
 
 #include <abc/libabc.h>
 
+#define UNUSED(x) ((void)x)
+
 static inline void __attribute__((always_inline, format(printf, 2, 3)))
-abc_log_null(struct abc_ctx *ctx, const char *format, ...) {}
+abc_log_null(struct abc_ctx *ctx, const char *format, ...)
+{
+     UNUSED(ctx);
+     UNUSED(format);
+}
 
 #define abc_log_cond(ctx, prio, ...) \
   do { \
