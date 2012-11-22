@@ -34,12 +34,11 @@ AS_IF([test "x$enable_debug" = "xyes"], [
         AC_DEFINE(ENABLE_DEBUG, [1], [Debug messages.])
 ])
 
-my_CFLAGS="-Wall \
+my_CFLAGS="-pedantic -Wall -Wextra \
 -Wmissing-declarations -Wmissing-prototypes \
--Wnested-externs -Wpointer-arith \
--Wpointer-arith -Wsign-compare -Wchar-subscripts \
+-Wnested-externs -Wsign-compare \
 -Wstrict-prototypes -Wshadow \
--Wformat-security -Wtype-limits"
+-Wformat-security"
 AC_SUBST([my_CFLAGS])
 
 AC_CONFIG_HEADERS(config.h)
